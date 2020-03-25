@@ -87,13 +87,13 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		//   of the game. The smaller the number, the faster it goes.
 		switch(input) {
 		case 0:
-			timer.setDelay(500);
-			break;
-		case 1:
 			timer.setDelay(250);
 			break;
+		case 1:
+			timer.setDelay(500);
+			break;
 		case 2:
-			timer.setDelay(100);
+			timer.setDelay(1000);
 			break;
 		}
 		//3. start the timer
