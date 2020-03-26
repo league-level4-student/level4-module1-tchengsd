@@ -109,7 +109,8 @@ public class Snake {
 		//1. complete the method so it returns true if the head is located
 		//   in the same location as any other body segment
 		for(int i = 1; i < snake.size(); i++) {
-			if(head.getLocation() == snake.get(i).getLocation()) {
+			if(snake.get(0).getLocation() == snake.get(i).getLocation()) {
+				System.out.println("colliding");
 				return true;
 			}
 		}
@@ -120,7 +121,7 @@ public class Snake {
 		//1. complete the method so it returns true if the passed in
 		//   location is located on the snake
 		for(int i = 0; i < snake.size(); i++) {
-			if(snake.get(i).getLocation() == loc) {
+			if(snake.get(i).getLocation().equals(getHeadLocation())) {
 				return true;
 			}
 		}
