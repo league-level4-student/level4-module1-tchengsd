@@ -99,7 +99,7 @@ public class Snake {
 	public boolean isOutOfBounds() {
 		//1. complete the method so it returns true if the head of the snake is outside of the window
 		//   and false otherwise
-		if(head.getLocation().x < -1 || head.getLocation().x > 15 || head.getLocation().y < -1 || head.getLocation().y > 12) {
+		if(getHeadLocation().x < 0 || getHeadLocation().x > 15 || getHeadLocation().y < 0 || getHeadLocation().y > 12) {
 			return true;
 		}
 		return false;
@@ -109,7 +109,7 @@ public class Snake {
 		//1. complete the method so it returns true if the head is located
 		//   in the same location as any other body segment
 		for(int i = 1; i < snake.size(); i++) {
-			if(snake.get(0).getLocation() == snake.get(i).getLocation()) {
+			if(getHeadLocation().equals(snake.get(i).getLocation())) {
 				System.out.println("colliding");
 				return true;
 			}
@@ -121,7 +121,7 @@ public class Snake {
 		//1. complete the method so it returns true if the passed in
 		//   location is located on the snake
 		for(int i = 0; i < snake.size(); i++) {
-			if(snake.get(i).getLocation().equals(getHeadLocation())) {
+			if(snake.get(i).getLocation().equals(loc)) {
 				return true;
 			}
 		}

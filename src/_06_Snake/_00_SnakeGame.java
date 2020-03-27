@@ -143,13 +143,17 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		int x = rand.nextInt(WIDTH);
 		int y = rand.nextInt(HEIGHT);
 		Location loc = new Location(x,y);
+		while(snake.isLocationOnSnake(loc)) {
+			x = rand.nextInt(WIDTH);
+			y = rand.nextInt(HEIGHT);
+			loc = new Location(x,y);
+		}
 		//2. set the foodLocation variable equal to the Location object you just created.
 		//   use the snake's isLocationOnSnake method to make sure you don't put the food on the snake
 		foodLocation = loc;
 	}
 
 	private void gameOver() {
-		
 		//1. stop the timer
 		timer.stop();
 		//2. tell the user their snake is dead
